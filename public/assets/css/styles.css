@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hotel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.hotel-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.hotel-details {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.hotel-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.hotel-info h2 {
+    margin: 0;
+}
+
+.hotel-info p {
+    margin: 5px 0;
+}
+
+.hotel-image {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.hotel-image img {
+    width: 300px; /* Sesuaikan lebar yang diinginkan */
+    height: 200px; /* Sesuaikan tinggi yang diinginkan */
+    object-fit: cover; /* Untuk menjaga perbandingan aspek dan mengisi kotak dengan gambar */
+    border-radius: 8px;
+}
+
+.facility-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.facility-icon {
+    margin-right: 10px; /* Sesuaikan sesuai kebutuhan */
+}
+
+.facilities {
+    margin-top: 20px; /* Atur margin sesuai kebutuhan */
+}
+
+/* .facilities {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+} */
+
+.facilities h3 {
+    margin-bottom: 10px;
+}
+
+.facility-item {
+    display: flex;
+    align-items: center;
+}
+
+.facility-item i,
+.facility-item img {
+    margin-right: 5px;
+}
+
+.facilities table {
+    width: 110%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.facility-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+.facilities td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+}
+
+.facilities svg,
+.facilities span {
+    margin-bottom: 1px;
+    vertical-align: middle;
+}
+
+.detail-button {
+    text-align: right;
+}
+
+.detail-button form {
+    margin: 0;
+}
+
+.button-detail {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #3498db; /* Warna latar belakang tombol */
+    color: #fff; /* Warna teks tombol */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-detail:hover {
+    background-color: #2980b9; /* Warna latar belakang saat hover */
+}
+
+.input-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.facilities,
+.search-by-need {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.facilities h3,
+.search-by-need h4 {
+    margin-bottom: 10px;
+}
+
+.facilities table,
+.search-by-need table,
+.room-info-table {
+    width: 90%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.facilities td,
+.search-by-need td,
+.room-info-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: middle; /* Menengahkan konten secara vertikal */
+}
+
+.facilities svg,
+.search-by-need svg,
+.room-info-table svg {
+    margin-bottom: 1px;
+    vertical-align: middle; /* Menengahkan ikon secara vertikal */
+}
+
+.facilities span,
+.search-by-need span,
+.room-info-table span {
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: middle; /* Menengahkan teks secara vertikal */
+}
+
+.wifi-container,
+.parking-container,
+.hours-container,
+.restaurant-container,
+.ac-container,
+.elevator-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.wifi-container svg,
+.parking-container svg,
+.hours-container img,
+.restaurant-container img,
+.ac-container img,
+.elevator-container img {
+    margin-right: 20px;
+}
+
+.input-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.room-info-table .input-button {
+    background-color: #007BFF;
+}
+
+
+.hours-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.hours-container img {
+    margin-right: 15px; /* Mengurangi jarak antara icon dan teks */
+    max-width: 22px; /* Menyesuaikan lebar maksimum ikon */
+    max-height: 22px; /* Menyesuaikan tinggi maksimum ikon */
+}
+
+.hours-container span {
+    white-space: nowrap; /* Mencegah teks dari pemisahan baris */
+}
+
+.reviews .reviews-table {
+    margin-top: 20px;
+}
+
+.reviews .reviews-table th,
+.reviews .reviews-table td {
+    text-align: left; /* Menyusun teks ke kiri */
+}
+
+.reviews .reviews-table th {
+    background-color: #f2f2f2; /* Warna latar belakang untuk header */
+}
+
+.reviews .reviews-table td:first-child {
+    width: 150px; /* Lebar kolom nama pengguna */
+}
+
+.reviews .reviews-table td:nth-child(2) {
+    width: 80px; /* Lebar kolom rating */
+}
+
+.reviews .reviews-table td:nth-child(3) {
+    width: 200px; /* Lebar kolom ulasan */
+}
+
+
+.reviews {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.reviews h3 {
+    margin-bottom: 10px;
+}
+
+.reviews-table {
+    width: 80%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Menambahkan jarak antara tabel ulasan dan elemen sebelumnya */
+}
+
+.reviews-table th,
+.reviews-table td {
+    padding: 15px;
+    border: 1px solid #ddd;
+    vertical-align: middle;
+    text-align: center; /* Menengahkan teks dalam sel */
+}
+
+.reviews-table th {
+    background-color: #f2f2f2;
+}
+
+.reviews-table td:first-child {
+    width: 150px; /* Lebar kolom nama pengguna */
+}
+
+.reviews-table td:nth-child(2) {
+    width: 80px; /* Lebar kolom rating */
+}
+
+.reviews-table td:nth-child(3) {
+    width: 200px; /* Lebar kolom ulasan */
+}

@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+@include('layouts.back')
+
+@include('layouts.search')
+
     <div class="mb-5">
         @foreach($hotel->images as $image)
             <img src="{{ asset($image->path) }}" alt="{{ $image->alt }}" class="rounded-md object-cover w-full">
@@ -55,7 +59,7 @@
                     @auth
                         <form action="{{ route('booking.create') }}">
                             <input type="hidden" name="room" value="{{ $room->id }}">
-                            <button type="submit" class="block rounded-md ring-1 ring-inset ring-gray-300 px-3 py-2.5 mt-5 text-center focus:ring-2 focus:ring-inset focus:ring-sky-600 w-full">Pesan Kamar</button>
+                            <button type="submit" class="block rounded-md ring-1 ring-inset ring-gray-300 px-3 py-2.5 mt-5 text-center focus:ring-2 focus:ring-inset focus:ring-sky-600 w-full bg-blue-500 hover:bg-purple-600 focus:bg-purple-600 text-white font-bold rounded-lg transition duration-300 ease-in-out">Pesan Kamar</button>
                         </form>
                     @endauth
                 </div>

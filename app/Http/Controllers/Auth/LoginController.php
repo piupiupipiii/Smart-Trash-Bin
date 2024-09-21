@@ -8,19 +8,26 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
         return view('pages.login');
     }
 
     public function authenticate(Request $request)
     {
-        if (! Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-            session()->flash('login_invalid');
+        // Validasi input
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
 
-            return response()->redirectToRoute('login.index');
+        // Coba autentikasi pengguna
+        if (!Auth::attempt($request->only('email', 'password'))) {
+            // Jika autentikasi gagal, kembali ke halaman login dengan pesan kesalahan
+            return redirect()->route('login.index')->withErrors(['login' => 'Email atau password salah.'])->withInput($request->only('email'));
         }
 
-        return response()->redirectToIntended();
+        // Jika autentikasi berhasil, redirect ke halaman tertentu atau halaman sebelumnya
+        return redirect()->intended('/dashboard');
     }
 }

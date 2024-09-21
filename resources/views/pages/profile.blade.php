@@ -1,6 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
+
+    <div class="flex justify-between items-center mb-8">
+        <div class="flex items-center">
+            <a href="javascript:history.back()" class="btn btn-primary flex items-center">
+                <img src="{{ asset('assets/images/back/back.png') }}" alt="Back" class="w-8 h-8 mr-2">
+                <span class="text-lg">Back</span>
+            </a>
+            <!-- Logo Anda -->
+        </div>
+        <div class="ml-4">
+            <!-- Search bar Anda -->
+        </div>
+    </div>
+
+
     <div class="flex flex-col gap-4 justify-center rounded-md ring-1 ring-inset ring-gray-300 py-8 px-8 mb-5">
         <div>
             <label for="name" class="block font-medium leading-6 text-gray-900">Nama</label>

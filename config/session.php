@@ -59,7 +59,7 @@ return [
     |
     */
 
-    'files' => storage_path('framework/sessions'),
+    'files' => 'D:/pipini/sem3/fix/storage/framework/sessions',
 
     /*
     |--------------------------------------------------------------------------

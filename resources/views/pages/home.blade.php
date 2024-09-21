@@ -1,28 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="flex flex-row gap-3 justify-center rounded-md ring-1 ring-inset ring-gray-300 py-5 mb-5">
-        <div>
-            <label for="query" class="block font-medium leading-6 text-gray-900">Search</label>
-            <div class="relative mt-2 rounded-md shadow-sm">
-                <input type="text" name="query" id="query" class="block w-full rounded-md border-0 py-1.5 pl-4 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6" placeholder="Hotel name or location">
-            </div>
-        </div>
-        <div>
-            <label for="check_in" class="block font-medium leading-6 text-gray-900">Check-in</label>
-            <div class="relative mt-2 rounded-md shadow-sm">
-                <input type="date" name="check_in" id="check_in" class="block w-full rounded-md border-0 py-1.5 pl-4 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6" placeholder="Hotel name or location">
-            </div>
-        </div>
-        <div>
-            <label for="check_out" class="block font-medium leading-6 text-gray-900">Check-out</label>
-            <div class="relative mt-2 rounded-md shadow-sm">
-                <input type="date" name="check_out" id="check_out" class="block w-full rounded-md border-0 py-1.5 pl-4 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6" placeholder="Hotel name or location">
-            </div>
-        </div>
-        <button type="submit" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Search</button>
-    </div>
-
+@include('layouts.search')
     <ul>
         @foreach($hotels as $hotel)
             <li class="rounded-md ring-1 ring-inset ring-gray-300 py-10 px-8 mb-5 grid grid-cols-2 gap-5">
@@ -61,7 +40,8 @@
                         </div>
                     </div>
 
-                    <a href="{{ route('hotel', ['id' => $hotel->id]) }}" class="block rounded-md ring-1 ring-inset ring-gray-300 px-3 py-2.5 mt-5 text-center focus:ring-2 focus:ring-inset focus:ring-sky-600">Detail</a>
+                    <a href="{{ route('hotel', ['id' => $hotel->id]) }}" class="block rounded-md ring-1 ring-inset ring-gray-300 px-3 py-2.5 mt-5 text-center focus:ring-2 focus:ring-inset focus:ring-sky-600 bg-blue-500 hover:bg-purple-600 focus:bg-purple-600 text-white font-bold rounded-lg transition duration-300 ease-in-out">Detail</a>
+
                 </div>
             </li>
         @endforeach

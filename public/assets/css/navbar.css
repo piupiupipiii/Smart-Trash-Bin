@@ -7,9 +7,15 @@ body {
 
 .navbar {
     background-color: #333;
-    padding: 15px;
+    padding: 10px;
     color: white;
-    text-align: center;
+    display: flex;
+    justify-content: space-between; /* Menyebabkan item di navbar akan diberikan ruang yang sama */
+    align-items: center; /* Menyebabkan item di navbar akan sejajar secara vertikal */
+}
+
+.logo {
+    margin-left: 15px; /* Jarak antara logo dengan sisi kiri navbar */
 }
 
 .search-container {

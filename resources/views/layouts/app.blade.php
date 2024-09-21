@@ -7,38 +7,51 @@
     <link rel="stylesheet" href="{{ asset('vendor/bootstrap-icons/bootstrap-icons.min.css') }}">
     @stack('style')
 
-    <script src="{{ asset('vendor/jquery/jquery.min.js') }}" async></script>
+    <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <title>Hotel Booking</title>
 </head>
 <body class="antialiased font-sans">
-<header class="py-5">
-    <nav class="container mx-auto flex flex-row justify-between mb-5">
-        <div class="flex flex-row gap-3">
-            <a href="{{ route('home') }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Home</a>
+    <header class="py-1">
+        <nav class="flex justify-between items-center py-1">
+            <a href="{{ route('home') }}">
+                <img src="{{ asset('assets/images/logo/logo.png') }}" alt="Your Logo" class="h-48">
+            </a>
 
-            @if(! request()->routeIs('home'))
-                <a href="{{ url()->previous() }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Back</a>
-            @endif
-        </div>
-
-        <div class="flex flex-row gap-3">
+        <div class="flex items-center justify-center space-x-1">
             @auth
-                <a href="{{ route('profile.index') }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Profile</a>
-                <a href="{{ route('logout.destroy') }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Logout</a>
+                <div class="inline-block px-4 py-2 border border-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition duration-300 ease-in-out">
+                    <a href="{{ route('profile.index') }}" class="btn font-bold">Profile</a>
+                </div>
+                <div class="inline-block px-4 py-2 border border-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition duration-300 ease-in-out">
+                    <a href="{{ route('logout.destroy') }}" class="btn font-bold">Logout</a>
+                </div>
             @else
-                <a href="{{ route('register.create') }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Register</a>
-                <a href="{{ route('login.index') }}" class="h-min mt-auto text-white bg-sky-700 hover:bg-sky-800 focus:ring-4 focus:outline-none focus:ring-sky-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2 text-center dark:bg-sky-600 dark:hover:bg-sky-700 dark:focus:ring-sky-800">Login</a>
+                <div class="inline-block px-4 py-2 border border-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition duration-300 ease-in-out">
+                    <a href="{{ route('register.create') }}" class="btn font-bold">Register</a>
+                </div>
+                <div class="inline-block px-4 py-2 border border-purple-800 rounded-lg hover:bg-purple-800 hover:text-white transition duration-300 ease-in-out">
+                    <a href="{{ route('login.index') }}" class="btn font-bold">Login</a>
+                </div>
+                
             @endauth
         </div>
-    </nav>
-</header>
 
-<main class="container mx-auto">
-    @yield('content')
-</main>
 
-@stack('script')
+
+        </nav>
+    </header>
+
+    <!-- Masukkan search bar di sini -->
+    <!-- @include('layouts.search') -->
+
+    <div class="container mx-auto">
+        <main>
+            @yield('content')
+        </main>
+    </div>
+
+    @stack('script')
 </body>
 </html>

@@ -10,24 +10,23 @@ class LoginController extends Controller
 {
     public function index()
     {
-        return view('pages.login');
+        return view('auth.login'); // Sesuaikan dengan path blade login Anda
     }
 
     public function authenticate(Request $request)
     {
-        // Validasi input
-        $request->validate([
+        $credentials = $request->validate([
             'email' => 'required|email',
             'password' => 'required',
         ]);
 
-        // Coba autentikasi pengguna
-        if (!Auth::attempt($request->only('email', 'password'))) {
-            // Jika autentikasi gagal, kembali ke halaman login dengan pesan kesalahan
-            return redirect()->route('login.index')->withErrors(['login' => 'Email atau password salah.'])->withInput($request->only('email'));
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+            return redirect()->intended('dashboard'); // Ubah sesuai kebutuhan Anda
         }
 
-        // Jika autentikasi berhasil, redirect ke halaman tertentu atau halaman sebelumnya
-        return redirect()->intended('/dashboard');
+        return back()->withErrors([
+            'email' => 'The provided credentials do not match our records.',
+        ]);
     }
 }
